@@ -2,26 +2,17 @@
 Install RTC DS3231 for Pi
 =====================================================
 
-1. Install i2c tools
-	sudo apt-get install python-smbus i2c-tools
+1. Clone aip_rtc_ds3231 repo:
+	git clone 
 
-2. Enable i2c6 pin
-	sudo nano /boot/config.txt
-	**then add lines to the end of file
-	dtoverlay=i2c6
-	**uncomment this line
-	dtparam=i2c_arm=on
+2. Run the installer as root
+	sudo python3 install.py
 
-3. Check if RTC is detected at i2c6
-	sudo i2cdetect -y 6
+3. Shutdown pi and connect RTC to i2c6 pins
+4. Run the rtc installer
+	python3 rtc_install.py
 
-4. Sync time from Pi to RTC
-	**run rtc_installer.py
 
-5. Add the script to load at startup
-	sudo crontab -e
-	**add below lines
-	@reboot python /home/pi/cak/test.py &
 
 
 
