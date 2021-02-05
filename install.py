@@ -3,6 +3,9 @@
 import subprocess
 from crontab import CronTab
 
+# =============================================================
+# ==========================Helpers============================
+
 def replace_str(file_path, orig_str, new_str):
 	f_in = open(file_path, "rt")
 	data = f_in.read()
@@ -11,6 +14,8 @@ def replace_str(file_path, orig_str, new_str):
 	f_in = open(file_path, "wt")
 	f_in.write(data)
 	f_in.close()
+
+# =============================================================
 
 def install_i2c_tools():
 	print('Installing i2ctools.....')
