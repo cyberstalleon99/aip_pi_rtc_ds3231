@@ -59,6 +59,9 @@ def set_time_pi_from_rtc():
 def print_rtc_time():
 	print("RTC Time: " + ds3231.read_datetime().strftime("%Y-%m-%d %H:%M:%S"))
 	
+def print_pi_time():
+	print("Pi Time: " + datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+	
 def ask_time():
 	curr_time = input("Input Time and press Enter: ")
 	if is_time_valid(curr_time):
@@ -113,11 +116,13 @@ def main():
 		if connect():
 			set_time_pi_from_rtc()
 			print_rtc_time()
+			print_pi_time()
 		else:
 			print('No internet connection.')
 		
 	elif choice == '2':
 		print_rtc_time()
+		print_pi_time()
 		print("")
 		main()
 		

@@ -64,6 +64,7 @@ def main():
 	else:
 		install_dependencies()
 		enable_i2c_arm()
+		enable_i2c6_pin
 		run_at_startup()
 	
 		print('======================================================================')
