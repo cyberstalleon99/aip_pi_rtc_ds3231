@@ -53,7 +53,7 @@ def enable_i2c6_pin():
 # Enable script to run at startup		
 def run_at_startup():
 	my_cron = get_cron_user(user='root')
-	job = my_cron.new(command='python /home/pi/aip_pi_rtc_ds3231/start_up.py')
+	job = my_cron.new(command='python /home/pi/aip/aip_pi_rtc_ds3231/start_up.py')
 	job.every_reboot()
 	my_cron.write()
 	print('Start up script for the RTC was installed')
